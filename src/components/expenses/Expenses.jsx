@@ -3,6 +3,7 @@ import ExpenseItem from './ExpenseItem';
 import './Expenses.css';
 const Expenses = props => {
   return (
+    //expenseItem component is re-used
     <>
       <Card className="expenses">
         <ExpenseItem

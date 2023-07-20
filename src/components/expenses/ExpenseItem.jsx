@@ -4,7 +4,9 @@ import Expensedate from './Expensedate';
 import { useState } from 'react';
 
 function ExpenseItem(props) {
+  // this state updates the title value
   const [title, setState] = useState(props.title);
+
   const changeHandler = () => {
     setState('updated!');
   };
