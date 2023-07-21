@@ -17,7 +17,7 @@ const ExpenseForm = () => {
     setEnteredDate(event.target.value);
   };
 
-  //Function carries out the form submission
+  //Function carries out the form submission and resets the input fields
   const submitHandler = event => {
     event.preventDefault();
 
@@ -27,6 +27,7 @@ const ExpenseForm = () => {
       date: new Date(enteredDate)
     };
     console.log(expenseData);
+    setEnteredTitle('');
   };
 
   return (
@@ -35,7 +36,11 @@ const ExpenseForm = () => {
         <div className="new-expense__controls">
           <div className="new-expense__control">
             <label htmlFor="title">title</label>
-            <input type="text" onChange={titleChangeHandler} />
+            <input
+              value={enteredTitle}
+              type="text"
+              onChange={titleChangeHandler}
+            />
           </div>
           <div className="new-expense__control">
             <label htmlFor="Amount">Amount</label>
