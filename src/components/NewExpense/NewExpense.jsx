@@ -10,23 +10,11 @@ const NewExpense = () => {
     };
     console.log(expenseData);
   };
-  const logArray = arrayValues => {
-    let arr = [23, 34, 45, 56, 78];
-    const numbers = [
-      ...arrayValues,
-      arr.map(number => {
-        console.log(number);
-      })
-    ];
-    console.log(numbers);
-  };
+
   return (
     <>
       <div className="new-expense">
-        <ExpenseForm
-          onSaveExpenseData={saveExpenseDataHandler}
-          logarithm={logArray}
-        />
+        <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
       </div>
     </>
   );
