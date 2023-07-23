@@ -26,7 +26,6 @@ const ExpenseForm = props => {
       amount: enteredAmount,
       date: new Date(enteredDate)
     };
-
     //input field default reset
     // console.log(expenseData);
     props.onSaveExpenseData(expenseData);
