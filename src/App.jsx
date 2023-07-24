@@ -24,8 +24,13 @@ const App = () => {
     }
   ];
   const addExpenseData = expense => {
-    console.log('from app.js');
-    console.log(expense);
+    // console.log('from app.js');
+    // console.log(expense);
+    const newdata = {
+      ...expenses,
+      newExpense: expense
+    };
+    console.log(newdata);
   };
   return (
     <>

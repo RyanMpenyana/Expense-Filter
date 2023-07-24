@@ -4,12 +4,10 @@ import './NewExpense.css';
 const NewExpense = props => {
   //Function expects the entered expense data
   const saveExpenseDataHandler = enteredExpenseData => {
-    const expenseData = [
-      {
-        ...enteredExpenseData,
-        id: Math.floor(Math.random() * 30).toString()
-      }
-    ];
+    const expenseData = {
+      ...enteredExpenseData,
+      id: Math.floor(Math.random() * 30).toString()
+    };
     props.onAddExpense(expenseData);
   };
 
