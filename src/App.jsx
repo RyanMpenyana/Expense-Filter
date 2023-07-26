@@ -25,18 +25,18 @@ const INITIAL_EXPENSES = [
   }
 ];
 const App = () => {
-  const [AddExpense, setAddedExpens] = useState(INITIAL_EXPENSES);
+  const [AddExpense, setAddedExpense] = useState(INITIAL_EXPENSES);
 
   // function renders a new item to existing list
   const addExpenseData = expense => {
-    setAddedExpens(previousExpenses => {
-      return [...previousExpenses, expense];
+    // updates state
+    setAddedExpense(previousExpenses => {
+      return [expense, ...previousExpenses];
     });
   };
-
   return (
     <>
-      <NewExpense onAddExpense={addExpenseData} o />
+      <NewExpense onAddExpense={addExpenseData} />
       <Expenses items={AddExpense} />
     </>
   );

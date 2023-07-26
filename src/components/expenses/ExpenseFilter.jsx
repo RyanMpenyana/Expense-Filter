@@ -1,5 +1,6 @@
 import classes from './ExpenseFilter.module.css';
 const ExpenseFilter = props => {
+  // executed onChange and passes the change value
   const DropdownChangeHandler = event => {
     props.onChangeFilter(event.target.value);
   };
