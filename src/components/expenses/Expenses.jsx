@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import Card from '../UI/Card';
 import ExpenseFilter from './ExpenseFilter';
-
+import ExpensesChart from './ExpensesChart';
 import './Expenses.css';
 import ExpensesList from './ExpensesList';
 const Expenses = props => {
-  const [filteredYear, setFilteredYear] = useState('');
+  const [filteredYear, setFilteredYear] = useState('2020');
 
   //this Function sets state to the selected year
   const filterChangeHandler = selectedYear => {
@@ -25,6 +25,8 @@ const Expenses = props => {
           selected={filteredYear}
           onChangeFilter={filterChangeHandler}
         />
+        <ExpensesChart expenses={filteredExpenses} />
+
         {/* dynamic rendering of list items conditionally*/}
         <ExpensesList items={filteredExpenses} />
       </Card>
