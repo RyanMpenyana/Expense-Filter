@@ -1,7 +1,17 @@
 import ExpenseForm from './ExpenseForm';
 import './NewExpense.css';
 
+import { useState } from 'react';
+
 const NewExpense = props => {
+  const [showBar, setBar] = useState(true);
+
+  const setShowHandler = () => {
+    setBar(true);
+  };
+  const setHideHandler = () => {
+    setBar(false);
+  };
   //Function expects the entered expense data
   const saveExpenseDataHandler = enteredExpenseData => {
     const expenseData = {
@@ -14,7 +24,16 @@ const NewExpense = props => {
   return (
     <>
       <div className="new-expense">
-        <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+        {showBar ? (
+          <ExpenseForm
+            onSaveExpenseData={saveExpenseDataHandler}
+            onCancel={setHideHandler}
+          />
+        ) : (
+          <button onClick={setShowHandler} type="submit">
+            Add Expense
+          </button>
+        )}
       </div>
     </>
   );
